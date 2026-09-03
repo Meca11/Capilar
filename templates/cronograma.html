@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='indux.css') }}"
+    >
+
+    <title>Meu Cronograma | Capilar</title>
+</head>
+
+<body>
+
+<section class="dashboard-cronograma">
+
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar-cronograma">
+
+        <h2 class="logo-capilar">Capilar.</h2>
+
+        <nav class="menu-lateral">
+
+            <a href="{{ url_for('inicio') }}">
+                Início
+            </a>
+
+            <a href="{{ url_for('cronograma') }}" class="ativo">
+                Meu Cronograma
+            </a>
+
+            <a href="{{ url_for('entenda') }}">
+                Entenda seu cabelo
+            </a>
+
+            <a href="{{ url_for('emocional') }}">
+                Emocional e cabelo
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="conteudo-cronograma">
+
+        <div class="cabecalho-cronograma">
+
+            <span class="mini-titulo">
+                Seu plano
+            </span>
+
+            <h1>Meu Cronograma</h1>
+
+            <p>
+                Crie um ciclo de cuidados baseado nas características
+                e necessidades do seu cabelo.
+            </p>
+
+        </div>
+
+
+        <!-- QUESTIONÁRIO -->
+        <section class="painel-questionario">
+
+            <div class="titulo-painel">
+                <div>
+                    <span>Análise capilar</span>
+                    <h2>Conte um pouco sobre seu cabelo</h2>
+                </div>
+
+                <span class="etapa">
+                    Etapa 1 de 1
+                </span>
+            </div>
+
+
+            <form
+                action="{{ url_for('analisar') }}"
+                method="POST"
+                class="form-cronograma"
+            >
+
+                <div class="campo-cronograma">
+
+                    <label>Qual é o seu tipo de cabelo?</label>
+
+                    <select name="tipo_cabelo" required>
+                        <option value="">Selecione</option>
+                        <option value="liso">Liso</option>
+                        <option value="ondulado">Ondulado</option>
+                        <option value="cacheado">Cacheado</option>
+                        <option value="crespo">Crespo</option>
+                    </select>
+
+                </div>
+
+
+                <div class="campo-cronograma">
+
+                    <label>Seu cabelo está ressecado?</label>
+
+                    <select name="ressecamento" required>
+                        <option value="">Selecione</option>
+                        <option value="baixo">Pouco</option>
+                        <option value="medio">Moderado</option>
+                        <option value="alto">Muito</option>
+                    </select>
+
+                </div>
+
+
+                <div class="campo-cronograma">
+
+                    <label>Seu cabelo está quebradiço?</label>
+
+                    <select name="quebradeza" required>
+                        <option value="">Selecione</option>
+                        <option value="baixo">Pouco</option>
+                        <option value="medio">Moderado</option>
+                        <option value="alto">Muito</option>
+                    </select>
+
+                </div>
+
+
+                <div class="campo-cronograma">
+
+                    <label>Como está a oleosidade?</label>
+
+                    <select name="oleosidade" required>
+                        <option value="">Selecione</option>
+                        <option value="baixo">Baixa</option>
+                        <option value="medio">Moderada</option>
+                        <option value="alto">Alta</option>
+                    </select>
+
+                </div>
+
+
+                <div class="campo-cronograma">
+
+                    <label>Qual é a espessura do fio?</label>
+
+                    <select name="espessura" required>
+                        <option value="">Selecione</option>
+                        <option value="fino">Fino</option>
+                        <option value="medio">Médio</option>
+                        <option value="grosso">Grosso</option>
+                    </select>
+
+                </div>
+
+
+                <div class="campo-cronograma">
+
+                    <label>
+                        Você já realizou procedimento químico?
+                    </label>
+
+                    <select
+                        name="procedimento_quimico"
+                        id="procedimento_quimico"
+                        required
+                    >
+                        <option value="">Selecione</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+
+                </div>
+
+
+                <div
+                    id="tipos_quimica"
+                    class="campo-quimicas"
+                    style="display: none;"
+                >
+
+                    <p>Quais procedimentos?</p>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="quimicas"
+                            value="coloracao"
+                        >
+                        Coloração
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="quimicas"
+                            value="descoloracao"
+                        >
+                        Descoloração
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="quimicas"
+                            value="progressiva"
+                        >
+                        Progressiva
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="quimicas"
+                            value="alisamento"
+                        >
+                        Alisamento
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="quimicas"
+                            value="relaxamento"
+                        >
+                        Relaxamento
+                    </label>
+
+                </div>
+
+
+                <div
+    id="tipos_quimica"
+    class="campo-quimicas"
+    style="display: none;"
+>
+
+    <p>Quais procedimentos?</p>
+
+    <label>
+        <input type="checkbox" name="quimicas" value="coloracao">
+        Coloração
+    </label>
+
+    <label>
+        <input type="checkbox" name="quimicas" value="descoloracao">
+        Descoloração
+    </label>
+
+    <label>
+        <input type="checkbox" name="quimicas" value="progressiva">
+        Progressiva
+    </label>
+
+    <label>
+        <input type="checkbox" name="quimicas" value="alisamento">
+        Alisamento
+    </label>
+
+    <label>
+        <input type="checkbox" name="quimicas" value="relaxamento">
+        Relaxamento
+    </label>
+
+</div>
+
+
+<!-- BOTÃO FINAL -->
+
+<div class="area-criar-cronograma">
+
+    <button
+        type="submit"
+        class="botao-criar-cronograma"
+    >
+        Criar meu cronograma
+        <span>→</span>
+    </button>
+
+</div>
+
+</form>
+
+
+
+
+                <button
+                    type="submit"
+                    class="botao-analisar"
+                >
+                    Analisar meu cabelo
+                </button>
+
+            </form>
+
+        </section>
+
+        {% if resultado %}
+
+        <!-- RESUMO -->
+        <section class="resumo-analise">
+
+            <div class="card-resumo rosa">
+                <span>Maior prioridade</span>
+                <strong>{{ prioridades[0] }}</strong>
+            </div>
+
+            <div class="card-resumo azul">
+                <span>Duração</span>
+                <strong>4 semanas</strong>
+            </div>
+
+            <div class="card-resumo amarelo">
+                <span>Etapas</span>
+                <strong>12 cuidados</strong>
+            </div>
+
+        </section>
+
+
+        <!-- PLANO -->
+        <section class="painel-ciclo">
+
+            <div class="titulo-painel">
+                <div>
+                    <span>Planejamento</span>
+                    <h2>Seu ciclo capilar</h2>
+                </div>
+
+                <div class="legenda-cronograma">
+                    <span class="legenda-h">Hidratação</span>
+                    <span class="legenda-n">Nutrição</span>
+                    <span class="legenda-r">Reconstrução</span>
+                </div>
+            </div>
+
+
+            <div class="lista-semanas">
+
+                {% for semana in cronograma %}
+
+                <div class="linha-semana">
+
+                    <div class="semana-numero">
+                        <small>Semana</small>
+                        <strong>{{ semana["semana"] }}</strong>
+                    </div>
+
+
+                    <div class="cuidados-semana">
+
+                       {% for tratamento in semana["tratamentos"] %}
+
+<div class="
+    cuidado
+    {% if tratamento == 'Hidratação' %}
+        cuidado-h
+    {% elif tratamento == 'Nutrição' %}
+        cuidado-n
+    {% elif tratamento == 'Reconstrução' %}
+        cuidado-r
+    {% endif %}
+">
+
+    <span>{{ loop.index }}</span>
+
+    <strong>
+        {{ tratamento }}
+    </strong>
+
+</div>
+
+{% endfor %}
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+
+        <section class="acoes-plano">
+
+            <div>
+                <h3>Continue acompanhando seu cabelo</h3>
+
+                <p>
+                    Salve seu plano para acompanhar sua evolução
+                    e organizar seus próximos cuidados.
+                </p>
+            </div>
+
+            <div class="botoes-plano">
+                <button class="salvar">
+                    Criar conta e salvar
+                </button>
+
+                <button class="baixar">
+                    Baixar
+                </button>
+
+                <button class="lembrete">
+                    Lembretes
+                </button>
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+
+    </main>
+
+</section>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

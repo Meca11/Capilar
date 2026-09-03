@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='indux.css') }}"
+    >
+   
+    <title>Capilar | Início</title>
+</head>
+<body>
+
+    <section class="dashboard-cronograma">
+
+        <!-- SIDEBAR -->
+           <aside class="sidebar-cronograma">
+
+        <!-- LOGO -->
+        <a href="{{ url_for('inicio') }}" class="logo-capilar">
+
+            <img
+                src="{{ url_for('static', filename='img/capilar-logo.png') }}"
+                alt="Capilar"
+            >
+
+        </a>
+
+
+            <nav class="menu-lateral">
+
+                <a href="{{ url_for('inicio') }}" class="ativo">
+                    Início
+                </a>
+
+                <a href="{{ url_for('cronograma') }}">
+                    Meu Cronograma
+                </a>
+
+                <a href="{{ url_for('entenda') }}">
+                    Entenda seu cabelo
+                </a>
+
+                <a href="{{ url_for('emocional') }}">
+                    Emocional e cabelo
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- CONTEÚDO -->
+        <main class="conteudo-home">
+
+            <section class="hero-home">
+
+                <div class="texto-home">
+                   
+                    <h1>Seja bem-vindo à Capilar</h1>
+
+                    <h2>
+                        Conheça seu cabelo. Cuide do que ele precisa.
+                    </h2>
+
+                    <p>
+                        A Capilar é uma plataforma criada para te ajudar
+                        a entender melhor o seu cabelo e montar um
+                        cronograma capilar mais adequado às suas necessidades.
+                        A partir das suas características, rotina, histórico
+                        químico e objetivos, o sistema analisa suas informações
+                        e sugere cuidados personalizados.
+                    </p>
+
+                    <a
+                        href="{{ url_for('cronograma') }}"
+                        class="botao-home-dashboard"
+                    >
+                        Criar meu cronograma
+                    </a>
+                </div>
+
+
+                <div class="fotos-home-dashboard">
+                    <img
+                        src="{{ url_for('static', filename='img/cabelo1.jpg') }}"
+                        alt="Cabelo 1"
+                    >
+
+                    <img
+                        src="{{ url_for('static', filename='img/cabelo2.jpg') }}"
+                        alt="Cabelo 2"
+                    >
+
+                    <img
+                        src="{{ url_for('static', filename='img/cabelo3.jpg') }}"
+                        alt="Cabelo 3"
+                    >
+                </div>
+
+            </section>
+
+        </main>
+
+    </section>
+
+</body>
+</html>

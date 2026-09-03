@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='indux.css') }}"
+    >
+
+    <title>Emocional e cabelo | Capilar</title>
+</head>
+
+<body>
+
+<section class="dashboard-cronograma">
+
+    <aside class="sidebar-cronograma">
+
+        <h2 class="logo-capilar">
+            Capilar.
+        </h2>
+
+        <nav class="menu-lateral">
+
+            <a href="{{ url_for('inicio') }}">
+                Início
+            </a>
+
+            <a href="{{ url_for('cronograma') }}">
+                Meu Cronograma
+            </a>
+
+            <a href="{{ url_for('entenda') }}">
+                Entenda seu cabelo
+            </a>
+
+            <a
+                href="{{ url_for('emocional') }}"
+                class="ativo"
+            >
+                Emocional e cabelo
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="conteudo-pagina">
+
+        <section class="pagina-emocional">
+
+            <div class="cabecalho-emocional">
+
+                <span class="tag-emocional">
+                    Bem-estar e imagem
+                </span>
+
+                <h1>Emocional e cabelo</h1>
+
+                <p>
+                    Cabelo também faz parte da forma como construímos
+                    nossa imagem, identidade e percepção de nós mesmos.
+                </p>
+
+            </div>
+
+
+            <div class="lista-artigos">
+
+                <!-- seus <details class="artigo-emocional"> aqui -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+</section>
+
+</body>
+</html>

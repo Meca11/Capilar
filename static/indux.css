@@ -1,0 +1,2234 @@
+/* =========================================================
+   CAPILAR — CSS PRINCIPAL
+========================================================= */
+
+:root {
+    --azul-claro: #B3DEE2;
+    --rosa: #E27396;
+    --rosa-claro: #EB9AB2;
+    --lilas: #EFCFE3;
+    --bege: #ECF2D8;
+    --amarelo: #EDE986;
+
+    --fundo-dashboard: #F7FBFC;
+    --branco: #FFFFFF;
+    --texto: #24333A;
+}
+
+.hidratacao {
+    background-color: #B3DEE2;
+}
+
+.nutricao {
+    background-color: #EB9AB2;
+}
+
+.reconstrucao {
+    background-color: #EFCFE3;
+}
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+
+
+/* TÍTULOS */
+
+h1,
+h2,
+h3 {
+    font-family: 'DM Serif Display', serif;
+    color: var(--texto);
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 400;
+}
+
+
+/* TEXTOS */
+
+p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+
+/* CONTAINER */
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* ==================================
+   HOME NO MESMO PADRÃO DO DASHBOARD
+================================== */
+
+.conteudo-home {
+    background-color: #F7FBFC;
+    padding: 50px 6% 80px;
+}
+
+
+.hero-home {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+}
+
+
+.texto-home {
+    width: 52%;
+}
+
+
+.texto-home h1 {
+    font-size: 64px;
+    margin: 10px 0 25px;
+}
+
+
+.texto-home h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+
+.texto-home p {
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #526168;
+}
+
+
+.botao-home-dashboard {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 16px 28px;
+
+    background-color: #E27396;
+    color: white;
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.botao-home-dashboard:hover {
+    transform: translateY(-2px);
+}
+
+
+.fotos-home-dashboard {
+    width: 48%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.fotos-home-dashboard img {
+    width: 180px;
+    height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 100px;
+}
+
+
+.fotos-home-dashboard img:nth-child(2) {
+    height: 500px;
+}
+
+
+@media (max-width: 1000px) {
+    .hero-home {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .texto-home,
+    .fotos-home-dashboard {
+        width: 100%;
+    }
+
+    .texto-home {
+        text-align: center;
+    }
+
+    .texto-home p {
+        margin: 0 auto;
+    }
+
+    .fotos-home-dashboard {
+        margin-top: 30px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .texto-home h1 {
+        font-size: 46px;
+    }
+
+    .texto-home h2 {
+        font-size: 22px;
+    }
+
+    .fotos-home-dashboard {
+        gap: 10px;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    .fotos-home-dashboard img {
+        width: 150px;
+        height: 340px;
+        min-width: 150px;
+    }
+
+    .fotos-home-dashboard img:nth-child(2) {
+        height: 390px;
+    }
+}
+
+
+/* =========================================================
+   MENU DE NAVEGAÇÃO
+========================================================= */
+
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    position: relative;
+}
+
+
+.menu-lateral a {
+    position: relative;
+
+    display: block;
+
+    padding: 15px 16px;
+
+    border-radius: 15px;
+
+    color: #24333A;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    z-index: 2;
+}
+
+
+/* ITEM DA PÁGINA ATUAL */
+
+.menu-lateral .ativo {
+    background-color: #F7FBFC;
+
+    font-weight: 700;
+
+    border-radius: 15px 0 0 15px;
+}
+
+
+/* FAZ O BRANCO CONTINUAR ATÉ A PÁGINA */
+
+.menu-lateral .ativo::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: -46px;
+
+    width: 50px;
+    height: 100%;
+
+    background-color: #F7FBFC;
+
+    z-index: -1;
+}
+
+/* =========================================================
+   PÁGINA INICIAL
+========================================================= */
+
+.inicio {
+    min-height: 100vh;
+
+    padding: 40px 6%;
+}
+
+
+.conteudo-inicio {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+}
+
+
+.texto-inicio {
+    width: 48%;
+}
+
+
+.inicio h1 {
+    font-size: 64px;
+    font-weight: 400;
+
+    text-align: center;
+
+    margin-top: 90px;
+    margin-bottom: 50px;
+}
+
+
+.texto-inicio h2 {
+    font-size: 30px;
+}
+
+
+.texto-inicio p {
+    font-size: 20px;
+    line-height: 1.6;
+
+    max-width: 650px;
+}
+
+
+/* BOTÃO INICIAL */
+
+.botao-inicio {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 18px 35px;
+
+    background-color: var(--salmao);
+    color: var(--texto);
+
+    text-decoration: none;
+
+    border-radius: 40px;
+
+    transition: transform 0.2s ease;
+}
+
+
+.botao-inicio:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOTOS DA PÁGINA INICIAL
+========================================================= */
+
+.fotos-inicio {
+    width: 48%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.fotos-inicio img {
+    width: 180px;
+    height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 100px;
+}
+
+
+.fotos-inicio img:nth-child(2) {
+    height: 480px;
+}
+
+
+/* =========================================================
+   MEU CRONOGRAMA
+========================================================= */
+
+.cronograma {
+    min-height: 100vh;
+
+    padding: 80px 10%;
+
+    background-color: var(--fundo);
+}
+
+
+.titulo-cronograma {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+}
+
+
+.titulo-cronograma h2 {
+    font-size: 42px;
+}
+
+
+/* =========================================================
+   PERGUNTAS
+========================================================= */
+
+.box-pergunta {
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    padding: 25px;
+
+    background-color: var(--branco);
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(36, 51, 58, 0.06);
+}
+
+
+.box-pergunta label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 18px;
+}
+
+
+.box-pergunta select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid var(--verde);
+    border-radius: 10px;
+
+    background-color: white;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   RESULTADO DO CRONOGRAMA
+========================================================= */
+
+.resultado {
+    padding: 80px 7%;
+
+    background-color: var(--creme);
+
+    color: var(--texto);
+}
+
+
+.cabecalho-resultado {
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+.tag-resultado {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    background-color: var(--verde);
+    color: var(--texto);
+
+    border-radius: 40px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+
+.cabecalho-resultado h2 {
+    font-size: 40px;
+
+    margin: 10px 0 15px;
+}
+
+
+/* =========================================================
+   CARDS DO CRONOGRAMA
+========================================================= */
+
+.cards-cronograma {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.card-tratamento {
+    width: 280px;
+    min-height: 300px;
+
+    padding: 30px;
+
+    background-color: var(--branco);
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(36, 51, 58, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.card-tratamento:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 14px 35px rgba(36, 51, 58, 0.12);
+}
+
+
+.semana {
+    display: inline-block;
+
+    padding: 7px 16px;
+
+    background-color: var(--fundo);
+    color: var(--texto);
+
+    border-radius: 20px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.icone-tratamento {
+    font-size: 42px;
+
+    margin: 25px 0 10px;
+}
+
+
+.card-tratamento h3 {
+    font-size: 24px;
+
+    margin-bottom: 12px;
+}
+
+
+.card-tratamento p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SALVAR CRONOGRAMA
+========================================================= */
+
+.salvar-plano {
+    max-width: 800px;
+
+    margin: 60px auto 0;
+
+    text-align: center;
+}
+
+
+.salvar-plano h3 {
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+
+.salvar-plano p {
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   BOTÕES DO CRONOGRAMA
+========================================================= */
+
+.acoes-cronograma {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+
+.acoes-cronograma button {
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+
+.acoes-cronograma button:hover {
+    transform: translateY(-2px);
+}
+
+
+.botao-principal {
+    background-color: var(--azul);
+
+    color: white;
+
+    border: none;
+}
+
+
+.botao-secundario {
+    background-color: transparent;
+
+    color: var(--texto);
+
+    border: 1px solid var(--azul);
+}
+
+
+.botao-lembrete {
+    background-color: var(--salmao);
+
+    color: var(--texto);
+
+    border: none;
+}
+
+
+/* =========================================================
+   ENTENDA SEU CABELO
+========================================================= */
+
+.pagina-entenda {
+    min-height: 100vh;
+
+    padding: 80px 8% 100px;
+
+    background-color: var(--fundo);
+}
+
+
+/* CABEÇALHO */
+
+.apresentacao-entenda {
+    max-width: 750px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+
+    color: var(--texto);
+}
+
+
+.tag-entenda {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    background-color: var(--salmao);
+
+    border-radius: 30px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--texto);
+
+    margin-bottom: 18px;
+}
+
+
+.apresentacao-entenda h1 {
+    font-size: 55px;
+    font-weight: 400;
+
+    margin: 10px 0 20px;
+}
+
+
+.apresentacao-entenda p {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   CARDS DOS TIPOS DE CABELO
+========================================================= */
+
+.tipos-cabelo {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.card-tipo {
+    min-height: 230px;
+
+    padding: 35px;
+
+    background-color: var(--branco);
+
+    border-radius: 25px;
+
+    color: var(--texto);
+
+    text-decoration: none;
+
+    box-shadow: 0 10px 30px rgba(36, 51, 58, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.card-tipo:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 35px rgba(36, 51, 58, 0.14);
+}
+
+
+.numero-tipo {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: var(--azul);
+}
+
+
+.card-tipo h2 {
+    font-size: 29px;
+
+    margin: 20px 0 12px;
+}
+
+
+.card-tipo p {
+    max-width: 430px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+.ver-mais {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: var(--azul);
+}
+
+
+/* =========================================================
+   EMOCIONAL E CABELO
+========================================================= */
+
+.pagina-emocional {
+    min-height: 100vh;
+
+    padding: 70px 7% 110px;
+
+    background-color: var(--creme);
+
+    color: var(--texto);
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho-emocional {
+    max-width: 800px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+
+.tag-emocional {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    margin-bottom: 18px;
+
+    background-color: var(--salmao);
+
+    color: var(--texto);
+
+    border-radius: 30px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.cabecalho-emocional h1 {
+    margin: 0 0 20px;
+
+    font-size: 55px;
+    font-weight: 400;
+}
+
+
+.cabecalho-emocional p {
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: var(--texto);
+}
+
+
+/* =========================================================
+   LISTA DE ARTIGOS
+========================================================= */
+
+.lista-artigos {
+    width: 100%;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   ARTIGO EMOCIONAL
+========================================================= */
+
+.artigo-emocional {
+    width: 100%;
+
+    background-color: var(--branco);
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(36, 51, 58, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.artigo-emocional:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 16px 45px rgba(36, 51, 58, 0.12);
+}
+
+
+/* =========================================================
+   PARTE FECHADA DO ARTIGO
+========================================================= */
+
+.artigo-resumo {
+    display: block;
+
+    padding: 40px 45px;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    color: var(--texto);
+}
+
+
+.artigo-resumo::-webkit-details-marker {
+    display: none;
+}
+
+
+.artigo-resumo::marker {
+    display: none;
+}
+
+
+/* CATEGORIA */
+
+.categoria-artigo {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    background-color: var(--fundo);
+
+    border-radius: 20px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: var(--texto);
+}
+
+
+/* TÍTULO */
+
+.artigo-resumo h2 {
+    max-width: 700px;
+
+    margin: 22px 0 14px;
+
+    font-size: 32px;
+    line-height: 1.2;
+
+    color: var(--texto);
+}
+
+
+/* RESUMO */
+
+.resumo-artigo {
+    max-width: 680px;
+
+    margin-bottom: 0;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: var(--texto-secundario);
+}
+
+
+/* =========================================================
+   INFORMAÇÕES AO PASSAR O MOUSE
+========================================================= */
+
+.info-hover {
+    max-height: 0;
+
+    margin-top: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    font-family: 'Inter', sans-serif;
+
+    color: var(--texto-secundario);
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.35s ease,
+        margin-top 0.35s ease;
+}
+
+
+.artigo-emocional:hover .info-hover,
+.artigo-emocional[open] .info-hover {
+    max-height: 180px;
+
+    margin-top: 22px;
+
+    opacity: 1;
+}
+
+
+.info-hover span {
+    display: inline-block;
+
+    margin-right: 18px;
+
+    color: var(--azul);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.info-hover p {
+    max-width: 680px;
+
+    margin: 12px 0 0;
+
+    font-size: 16px;
+
+    color: var(--texto-secundario);
+}
+
+
+/* =========================================================
+   LER ARTIGO
+========================================================= */
+
+.ler-artigo {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: var(--azul);
+
+    transition: color 0.2s ease;
+}
+
+
+.artigo-resumo:hover .ler-artigo {
+    color: var(--texto);
+}
+
+
+/* =========================================================
+   ARTIGO ABERTO
+========================================================= */
+
+.texto-artigo {
+    max-width: 800px;
+
+    padding: 0 45px 50px;
+
+    font-family: 'Inter', sans-serif;
+
+    color: var(--texto);
+}
+
+
+.texto-artigo::before {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-bottom: 35px;
+
+    background-color: rgba(36, 51, 58, 0.10);
+}
+
+
+.texto-artigo h3 {
+    margin-top: 35px;
+    margin-bottom: 12px;
+
+    font-size: 23px;
+}
+
+
+.texto-artigo p {
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: var(--texto-secundario);
+}
+
+
+/* FONTES */
+
+.fontes-artigo {
+    margin-top: 45px;
+
+    padding: 25px;
+
+    background-color: rgba(176, 224, 230, 0.20);
+
+    border-radius: 18px;
+}
+
+
+.fontes-artigo h3 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .conteudo-inicio {
+        flex-direction: column;
+    }
+
+    .texto-inicio,
+    .fotos-inicio {
+        width: 100%;
+    }
+
+    .texto-inicio {
+        text-align: center;
+    }
+
+    .fotos-inicio {
+        margin-top: 30px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    nav {
+        gap: 20px;
+
+        padding: 18px 15px;
+
+        flex-wrap: wrap;
+    }
+
+
+    nav a {
+        font-size: 14px;
+    }
+
+
+    .tipos-cabelo {
+        grid-template-columns: 1fr;
+    }
+
+
+    .pagina-entenda,
+    .pagina-emocional {
+        padding: 60px 6% 80px;
+    }
+
+
+    .apresentacao-entenda h1,
+    .cabecalho-emocional h1 {
+        font-size: 42px;
+    }
+
+
+    .artigo-resumo {
+        padding: 30px;
+    }
+
+
+    .artigo-resumo h2 {
+        font-size: 27px;
+    }
+
+
+    .texto-artigo {
+        padding: 0 30px 40px;
+    }
+
+
+    .fotos-inicio img {
+        width: 150px;
+        height: 350px;
+    }
+
+
+    .fotos-inicio img:nth-child(2) {
+        height: 390px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .inicio h1 {
+        font-size: 46px;
+    }
+
+
+    .fotos-inicio {
+        gap: 10px;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+    }
+
+
+    .fotos-inicio img {
+        min-width: 145px;
+    }
+
+
+    .cronograma {
+        padding: 60px 5%;
+    }
+
+
+    .cabecalho-resultado h2,
+    .titulo-cronograma h2 {
+        font-size: 34px;
+    }
+
+
+    .artigo-resumo {
+        padding: 25px;
+    }
+
+
+    .texto-artigo {
+        padding: 0 25px 35px;
+    }
+}
+
+/* ==================================
+   DASHBOARD DO CRONOGRAMA
+================================== */
+
+.dashboard-cronograma {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 210px 1fr;
+
+    background-color: #F7FBFC;
+
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* ==================================
+   MENU LATERAL
+================================== */
+
+.sidebar-cronograma {
+    background-color: #B3DEE2;
+
+    padding: 35px 25px;
+
+    border-radius: 0 35px 35px 0;
+}
+
+
+.logo-capilar {
+    display: block;
+    margin-bottom: 55px;
+    text-decoration: none;
+}
+
+.logo-capilar img {
+    display: block;
+    width: 140px;
+    height: auto;
+    max-width: 150px;
+
+    object-fit: contain;
+}
+
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.menu-lateral a {
+    padding: 13px 16px;
+
+    border-radius: 14px;
+
+    color: #24333A;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+.menu-lateral a:hover {
+    background-color: rgba(255,255,255,0.45);
+}
+
+
+.menu-lateral .ativo {
+    background-color: white;
+
+    font-weight: 600;
+}
+
+
+/* ==================================
+   CONTEÚDO
+================================== */
+
+.conteudo-cronograma {
+    background: var(--fundo-app);
+    padding: 45px 6% 80px;
+    min-width: 0;
+}
+
+.cabecalho-cronograma {
+    margin-bottom: 35px;
+}
+
+.cabecalho-cronograma h1 {
+    font-size: 48px;
+    margin: 7px 0 8px;
+}
+
+.cabecalho-cronograma p {
+    margin: 0;
+    font-size: 16px;
+    color: #607078;
+}
+
+.mini-titulo {
+    color: var(--rosa-forte);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* QUESTIONÁRIO */
+
+.painel-questionario,
+.painel-ciclo {
+    background: white;
+    border-radius: 28px;
+    padding: 32px;
+    box-shadow: 0 10px 35px rgba(36, 51, 58, 0.07);
+    margin-bottom: 28px;
+}
+
+.titulo-painel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.titulo-painel span {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #708087;
+}
+
+.titulo-painel h2 {
+    margin: 5px 0 0;
+    font-size: 27px;
+}
+
+.etapa {
+    background: var(--lilas);
+    padding: 8px 14px;
+    border-radius: 20px;
+}
+
+
+/* FORM */
+
+.form-cronograma {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.campo-cronograma {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo-cronograma label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo-cronograma select {
+    width: 100%;
+    padding: 14px 15px;
+
+    background: #F8FAFB;
+
+    border: 1px solid #E2E8EA;
+    border-radius: 14px;
+
+    font-family: 'Inter', sans-serif;
+}
+
+.campo-quimicas {
+    grid-column: 1 / -1;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background: #F8FAFB;
+}
+
+.campo-quimicas label {
+    display: inline-flex;
+    margin: 8px 20px 0 0;
+    gap: 6px;
+
+    font-family: 'Inter', sans-serif;
+}
+
+.botao-analisar {
+    grid-column: 1 / -1;
+
+    justify-self: start;
+
+    margin-top: 10px;
+
+    padding: 14px 25px;
+
+    background: var(--rosa-forte);
+    color: white;
+
+    border: 0;
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+
+/* RESUMO */
+
+.resumo-analise {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+.card-resumo {
+    padding: 22px;
+
+    border-radius: 21px;
+}
+
+.card-resumo span {
+    display: block;
+    margin-bottom: 9px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 13px;
+}
+
+.card-resumo strong {
+    font-size: 20px;
+}
+
+.card-resumo.rosa {
+    background: var(--rosa-claro);
+}
+
+.card-resumo.azul {
+    background: var(--azul-capilar);
+}
+
+.card-resumo.amarelo {
+    background: var(--amarelo-capilar);
+}
+
+
+/* LEGENDA */
+
+.legenda-cronograma {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.legenda-cronograma span {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    color: #24333A;
+}
+
+.legenda-h {
+    background: var(--azul-capilar);
+}
+
+.legenda-n {
+    background: var(--rosa-claro);
+}
+
+.legenda-r {
+    background: var(--lilas);
+}
+
+
+/* SEMANAS */
+
+.lista-semanas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.linha-semana {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    background: #F8FAFB;
+
+    border-radius: 20px;
+
+    padding: 16px;
+}
+
+.semana-numero {
+    border-right: 1px solid #E3E9EB;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.semana-numero small {
+    color: #718188;
+}
+
+.semana-numero strong {
+    font-size: 27px;
+}
+
+.cuidados-semana {
+    padding-left: 18px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.cuidado {
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    border-radius: 16px;
+
+    font-family: 'Inter', sans-serif;
+}
+
+.cuidado > span {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.65);
+
+    font-size: 12px;
+}
+
+.cuidado-h {
+    background: var(--azul-capilar);
+}
+
+.cuidado-n {
+    background: var(--rosa-claro);
+}
+
+.cuidado-r {
+    background: var(--lilas);
+}
+
+
+/* AÇÕES */
+
+.acoes-plano {
+    padding: 27px 30px;
+
+    background: var(--verde-claro);
+
+    border-radius: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.acoes-plano h3 {
+    margin: 0 0 5px;
+}
+
+.acoes-plano p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #607078;
+}
+
+.botoes-plano {
+    display: flex;
+    gap: 10px;
+}
+
+.botoes-plano button {
+    border: 0;
+
+    padding: 12px 17px;
+
+    border-radius: 22px;
+
+    cursor: pointer;
+}
+
+.salvar {
+    background: var(--rosa-forte);
+    color: white;
+}
+
+.baixar {
+    background: white;
+}
+
+.lembrete {
+    background: var(--amarelo-capilar);
+}
+
+.area-criar-cronograma {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 12px;
+}
+
+
+.botao-criar-cronograma {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px 26px;
+
+    background-color: #E27396;
+    color: white;
+
+    border: none;
+    border-radius: 30px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.botao-criar-cronograma:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(226, 115, 150, 0.25);
+}
+
+
+.botao-criar-cronograma span {
+    color: white;
+    font-size: 18px;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .form-cronograma {
+        grid-template-columns: 1fr;
+    }
+
+    .resumo-analise {
+        grid-template-columns: 1fr;
+    }
+
+    .linha-semana {
+        grid-template-columns: 1fr;
+    }
+
+    .semana-numero {
+        align-items: flex-start;
+
+        border-right: 0;
+
+        margin-bottom: 15px;
+    }
+
+    .cuidados-semana {
+        padding-left: 0;
+
+        grid-template-columns: 1fr;
+    }
+
+    .acoes-plano {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+.topo-cronograma h1 {
+    font-size: 46px;
+
+    margin: 8px 0 5px;
+}
+
+
+.topo-cronograma p {
+    margin: 0;
+
+    color: #607078;
+
+    font-size: 16px;
+}
+
+
+/* ==================================
+   RESUMO
+================================== */
+
+.resumo-cronograma {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+.mini-card {
+    background-color: white;
+
+    padding: 22px 25px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(36, 51, 58, 0.06);
+}
+
+
+.mini-card span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #718188;
+
+    font-size: 13px;
+}
+
+
+.mini-card strong {
+    font-size: 19px;
+
+    color: #24333A;
+}
+
+
+/* ==================================
+   ÁREA DO CICLO
+================================== */
+
+.area-ciclo {
+    background-color: white;
+
+    padding: 35px;
+
+    border-radius: 28px;
+
+    box-shadow: 0 10px 35px rgba(36, 51, 58, 0.07);
+}
+
+
+.titulo-ciclo {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.titulo-ciclo > div > span {
+    color: #718188;
+
+    font-size: 13px;
+}
+
+
+.titulo-ciclo h2 {
+    margin: 5px 0 0;
+
+    font-size: 28px;
+}
+
+
+/* ==================================
+   LEGENDA
+================================== */
+
+.legenda {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.legenda span {
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    color: #24333A;
+}
+
+
+.legenda-h {
+    background-color: #B3DEE2;
+}
+
+
+.legenda-n {
+    background-color: #EB9AB2;
+}
+
+
+.legenda-r {
+    background-color: #EFCFE3;
+}
+
+
+/* ==================================
+   SEMANAS
+================================== */
+
+.semanas-cronograma {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+.semana-card {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 20px;
+
+    padding: 18px;
+
+    background-color: #F8FAFB;
+
+    border-radius: 20px;
+}
+
+
+.numero-semana {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    border-right: 1px solid #E6ECEE;
+}
+
+
+.numero-semana span {
+    font-size: 12px;
+
+    color: #718188;
+}
+
+
+.numero-semana strong {
+    font-size: 28px;
+
+    margin-top: 3px;
+}
+
+
+/* ==================================
+   TRATAMENTOS
+================================== */
+
+.cuidado-h {
+    background-color: #B3DEE2;
+}
+
+.cuidado-n {
+    background-color: #EB9AB2;
+}
+
+.cuidado-r {
+    background-color: #EFCFE3;
+}
+
+.tratamentos-semana {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+
+.tratamento-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    color: #24333A;
+}
+
+
+.numero-etapa {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255,255,255,0.70);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.tratamento-item strong {
+    font-size: 14px;
+}
+
+
+.hidratacao {
+    background-color: #B3DEE2;
+}
+
+
+.nutricao {
+    background-color: #EB9AB2;
+}
+
+
+.reconstrucao {
+    background-color: #EFCFE3;
+}
+
+
+/* ==================================
+   AÇÕES
+================================== */
+
+.acoes-plano {
+    margin-top: 25px;
+
+    padding: 28px 32px;
+
+    background-color: #ECF2D8;
+
+    border-radius: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.acoes-plano h3 {
+    margin: 0 0 5px;
+
+    font-size: 22px;
+}
+
+
+.acoes-plano p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #607078;
+}
+
+
+.botoes-plano {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.botoes-plano button {
+    padding: 12px 19px;
+
+    border-radius: 22px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: 'Inter', sans-serif;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+
+.botoes-plano button:hover {
+    transform: translateY(-2px);
+}
+
+
+.salvar {
+    background-color: #E27396;
+
+    color: white;
+}
+
+
+.baixar {
+    background-color: white;
+
+    color: #24333A;
+}
+
+
+.lembrete {
+    background-color: #EDE986;
+
+    color: #24333A;
+}
+
+
+/* ==================================
+   RESPONSIVO
+================================== */
+
+@media (max-width: 900px) {
+
+    .dashboard-cronograma {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sidebar-cronograma {
+        border-radius: 0;
+
+        padding: 20px;
+    }
+
+    .logo-capilar {
+        margin-bottom: 30px;
+    }
+
+
+    .menu-lateral {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+    }
+
+
+    .resumo-cronograma {
+        grid-template-columns: 1fr;
+    }
+
+
+    .semana-card {
+        grid-template-columns: 1fr;
+    }
+
+
+    .numero-semana {
+        border-right: none;
+
+        align-items: flex-start;
+    }
+
+
+    .tratamentos-semana {
+        grid-template-columns: 1fr;
+    }
+
+
+    .acoes-plano {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}

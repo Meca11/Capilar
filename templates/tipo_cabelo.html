@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ cabelo["nome"] }}</h1>
+
+<p>
+    {{ cabelo["descricao"] }}
+</p>
+
+
+<h2>Características</h2>
+
+<ul>
+
+    {% for caracteristica in cabelo["caracteristicas"] %}
+
+        <li>
+            {{ caracteristica }}
+        </li>
+
+    {% endfor %}
+
+</ul>
+
+
+<h2>Cuidados</h2>
+
+<ul>
+
+    {% for cuidado in cabelo["cuidados"] %}
+
+        <li>
+            {{ cuidado }}
+        </li>
+
+    {% endfor %}
+
+</ul>
+
+
+<h2>Fontes científicas</h2>
+
+<ul>
+
+    {% for fonte in cabelo["fontes"] %}
+
+        <li>
+            {{ fonte }}
+        </li>
+
+    {% endfor %}
+
+</ul>
+
+
+<a href="{{ url_for('cronograma') }}#cronograma">
+    Criar meu cronograma capilar
+</a>
+
+</body>
+</html>
