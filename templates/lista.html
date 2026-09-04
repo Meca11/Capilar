@@ -19,7 +19,7 @@
            <aside class="sidebar-cronograma">
 
         <!-- LOGO -->
-        <a href="{{ url_for('inicio') }}" class="logo-capilar">
+        <a href="#inicio" class="logo-capilar">
 
             <img
                 src="{{ url_for('static', filename='img/capilar-logo.png') }}"
@@ -29,82 +29,198 @@
         </a>
 
 
-            <nav class="menu-lateral">
+           <nav class="menu-lateral">
 
-                <a href="{{ url_for('inicio') }}" class="ativo">
-                    Início
-                </a>
+        <a href="#inicio" class="ativo">
+        Início
+         </a>
 
-                <a href="{{ url_for('cronograma') }}">
-                    Meu Cronograma
-                </a>
+        <a href="#cronograma">
+        Meu Cronograma
+         </a>
 
-                <a href="{{ url_for('entenda') }}">
-                    Entenda seu cabelo
-                </a>
+         <a href="#entenda">
+        Entenda seu cabelo
+         </a>
 
-                <a href="{{ url_for('emocional') }}">
-                    Emocional e cabelo
-                </a>
+         <a href="#emocional">
+        Emocional e cabelo
+    </a>
 
-            </nav>
+</nav>
 
         </aside>
+<main class="conteudo-home">
+
+    <!-- =====================================
+         1. INÍCIO
+    ====================================== -->
+
+    <section class="secao-site hero-home" id="inicio">
+
+        <div class="texto-home">
+
+            <h1>Seja bem-vindo à Capilar</h1>
+
+            <h2>
+                Conheça seu cabelo. Cuide do que ele precisa.
+            </h2>
+
+            <p>
+                A Capilar é uma plataforma criada para te ajudar
+                a entender melhor o seu cabelo e montar um
+                cronograma capilar mais adequado às suas necessidades.
+            </p>
+
+            <a
+                href="#cronograma"
+                class="botao-home-dashboard"
+            >
+                Criar meu cronograma
+            </a>
+
+        </div>
 
 
-        <!-- CONTEÚDO -->
-        <main class="conteudo-home">
+        <div class="fotos-home-dashboard">
 
-            <section class="hero-home">
+            <img
+                src="{{ url_for('static', filename='img/cabelo1.jpg') }}"
+                alt="Cabelo 1"
+            >
 
-                <div class="texto-home">
-                   
-                    <h1>Seja bem-vindo à Capilar</h1>
+            <img
+                src="{{ url_for('static', filename='img/cabelo2.jpg') }}"
+                alt="Cabelo 2"
+            >
 
-                    <h2>
-                        Conheça seu cabelo. Cuide do que ele precisa.
-                    </h2>
+            <img
+                src="{{ url_for('static', filename='img/cabelo3.jpg') }}"
+                alt="Cabelo 3"
+            >
 
-                    <p>
-                        A Capilar é uma plataforma criada para te ajudar
-                        a entender melhor o seu cabelo e montar um
-                        cronograma capilar mais adequado às suas necessidades.
-                        A partir das suas características, rotina, histórico
-                        químico e objetivos, o sistema analisa suas informações
-                        e sugere cuidados personalizados.
-                    </p>
-
-                    <a
-                        href="{{ url_for('cronograma') }}"
-                        class="botao-home-dashboard"
-                    >
-                        Criar meu cronograma
-                    </a>
-                </div>
-
-
-                <div class="fotos-home-dashboard">
-                    <img
-                        src="{{ url_for('static', filename='img/cabelo1.jpg') }}"
-                        alt="Cabelo 1"
-                    >
-
-                    <img
-                        src="{{ url_for('static', filename='img/cabelo2.jpg') }}"
-                        alt="Cabelo 2"
-                    >
-
-                    <img
-                        src="{{ url_for('static', filename='img/cabelo3.jpg') }}"
-                        alt="Cabelo 3"
-                    >
-                </div>
-
-            </section>
-
-        </main>
+        </div>
 
     </section>
+
+
+    <!-- =====================================
+         2. MEU CRONOGRAMA
+    ====================================== -->
+
+    <section
+        class="secao-site secao-cronograma"
+        id="cronograma"
+    >
+
+        <div class="cabecalho-cronograma">
+
+            <span class="mini-titulo">
+                Seu plano
+            </span>
+
+            <h1>Meu Cronograma</h1>
+
+            <p>
+                Responda algumas perguntas sobre seu cabelo
+                para criarmos um plano personalizado.
+            </p>
+
+        </div>
+
+
+        <section class="painel-questionario">
+
+            <form
+                action="{{ url_for('analisar') }}#resultado"
+                method="POST"
+                class="form-cronograma"
+            >
+
+                <!-- AQUI entram as perguntas
+                     que estão atualmente no cronograma.html -->
+
+            </form>
+
+        </section>
+
+
+        {% if resultado %}
+
+        <section
+            class="painel-ciclo"
+            id="resultado"
+        >
+
+            <h2>Seu cronograma está pronto</h2>
+
+            <!-- aqui entra seu resultado atual -->
+
+        </section>
+
+        {% endif %}
+
+    </section>
+
+
+    <!-- =====================================
+         3. ENTENDA SEU CABELO
+    ====================================== -->
+
+    <section
+        class="secao-site secao-entenda"
+        id="entenda"
+    >
+
+        <div class="apresentacao-entenda">
+
+            <h1>Entenda seu cabelo</h1>
+
+            <p>
+                Conheça as características dos diferentes tipos
+                de cabelo e os fatores que podem afetar os fios.
+            </p>
+
+        </div>
+
+        <!-- aqui entram seus cards:
+             Liso
+             Ondulado
+             Cacheado
+             Crespo -->
+
+    </section>
+
+
+    <!-- =====================================
+         4. EMOCIONAL E CABELO
+    ====================================== -->
+
+    <section
+        class="secao-site secao-emocional"
+        id="emocional"
+    >
+
+        <div class="cabecalho-emocional">
+
+            <h1>Emocional e cabelo</h1>
+
+            <p>
+                Cabelo, identidade, autoestima e bem-estar.
+            </p>
+
+        </div>
+
+        <!-- aqui entram os seus artigos -->
+
+    </section>
+
+</main>
+
+   
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
 
 </body>
 </html>

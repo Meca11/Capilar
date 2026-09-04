@@ -41,11 +41,9 @@ html {
 body {
     margin: 0;
     padding: 0;
-
-    background-color: var(--fundo);
-    color: var(--texto);
+   color: var(--texto);
 }
-
+ 
 
 /* TÍTULOS */
 
@@ -85,10 +83,28 @@ p {
    HOME NO MESMO PADRÃO DO DASHBOARD
 ================================== */
 
-.conteudo-home {
-    background-color: #F7FBFC;
+   .conteudo-home {
     padding: 50px 6% 80px;
-}
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(226, 115, 150, 0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(179, 222, 226, 0.28),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 70% 10%,
+            rgba(239, 207, 227, 0.20),
+            transparent 25%
+        ),
+        #F7FBFC;
+   }
+
 
 
 .hero-home {
@@ -1317,13 +1333,6 @@ p {
    MENU LATERAL
 ================================== */
 
-.sidebar-cronograma {
-    background-color: #B3DEE2;
-
-    padding: 35px 25px;
-
-    border-radius: 0 35px 35px 0;
-}
 
 
 .logo-capilar {
@@ -2231,4 +2240,691 @@ p {
         align-items: flex-start;
     }
 
+}
+
+/* =========================================================
+   CORREÇÃO GERAL — CAPILAR
+   COLOCAR NO FINAL DO CSS
+========================================================= */
+
+:root {
+    --azul-claro: #B3DEE2;
+    --rosa: #E27396;
+    --rosa-claro: #EB9AB2;
+    --lilas: #EFCFE3;
+    --bege: #ECF2D8;
+    --amarelo: #EDE986;
+
+    --fundo-dashboard: #F7FBFC;
+    --branco: #FFFFFF;
+
+    --texto: #24333A;
+    --texto-secundario: #526168;
+
+    /* NOMES ANTIGOS QUE O SEU CSS AINDA USA */
+    --fundo: #B3DEE2;
+    --salmao: #EB9AB2;
+    --verde: #ECF2D8;
+    --creme: #FFF3E2;
+    --azul: #93ABD9;
+
+    /* NOMES NOVOS DO DASHBOARD */
+    --fundo-app: #F7FBFC;
+    --rosa-forte: #E27396;
+    --azul-capilar: #B3DEE2;
+    --amarelo-capilar: #EDE986;
+    --verde-claro: #ECF2D8;
+}
+
+
+/* BODY */
+
+body {
+    margin: 0;
+    padding: 0;
+
+    color: var(--texto);
+
+    background-color: var(--fundo-dashboard);
+}
+
+
+/* DASHBOARD */
+
+.dashboard-cronograma {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+
+    background: transparent;
+}
+
+
+.site-capilar {
+    display: grid;
+
+    grid-template-columns: 195px minmax(0, 1fr);
+
+    width: 100%;
+}
+
+
+/* =========================================
+   SIDEBAR FIXA - VERSÃO DEFINITIVA
+========================================= */
+
+.dashboard-cronograma {
+    display: block;
+    min-height: 100vh;
+}
+
+
+/* BARRA LATERAL */
+
+.sidebar-cronograma {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 200px;
+    height: 100vh;
+
+    padding: 28px 20px;
+
+    background-color: #B3DEE2;
+
+    border-radius: 0 28px 28px 0;
+
+    z-index: 1000;
+
+    overflow: hidden;
+}
+
+
+/* CONTEÚDO DA DIREITA */
+
+.conteudo-home {
+    margin-left: 200px;
+
+    width: calc(100% - 200px);
+
+    min-height: 100vh;
+}
+
+
+/* LOGO */
+
+.logo-capilar {
+    display: block;
+
+    margin: 0 0 55px;
+
+    text-decoration: none;
+}
+
+
+.logo-capilar img {
+    width: 140px;
+    height: auto;
+
+    display: block;
+}
+
+
+/* MENU */
+
+.menu-lateral {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.menu-lateral a {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
+    color: #24333A;
+
+    text-decoration: none;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.menu-lateral a:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+
+    transform: translateX(3px);
+}
+
+
+/* PÁGINA / SEÇÃO ATUAL */
+
+.menu-lateral a.ativo {
+    background-color: rgba(255, 255, 255, 0.9);
+
+    font-weight: 700;
+}
+
+
+/* APAGA A EXTENSÃO ANTIGA */
+
+.menu-lateral a.ativo::after {
+    display: none;
+}
+
+
+
+
+/* =========================================================
+   HOME — FUNDO PASTEL VISÍVEL
+========================================================= */
+
+.conteudo-home {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 50px 6% 80px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 18% 20%,
+            rgba(226, 115, 150, 0.28) 0%,
+            rgba(226, 115, 150, 0.12) 22%,
+            transparent 42%
+        ),
+
+        radial-gradient(
+            circle at 82% 18%,
+            rgba(239, 207, 227, 0.42) 0%,
+            rgba(239, 207, 227, 0.18) 25%,
+            transparent 45%
+        ),
+
+        radial-gradient(
+            circle at 80% 82%,
+            rgba(179, 222, 226, 0.50) 0%,
+            rgba(179, 222, 226, 0.20) 28%,
+            transparent 50%
+        ),
+
+        #F7FBFC;
+}
+
+.conteudo-site {
+    min-width: 0;
+
+    background-color: #F7FBFC;
+}
+
+
+.secao-site {
+    min-height: 100vh;
+
+    padding: 70px 6% 90px;
+
+    scroll-margin-top: 20px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-home {
+    position: relative;
+
+    z-index: 1;
+
+    min-height: calc(100vh - 130px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+}
+
+
+.texto-home {
+    width: 50%;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.texto-home h1 {
+    margin: 10px 0 25px;
+
+    font-size: clamp(48px, 5vw, 72px);
+
+    line-height: 1.05;
+}
+
+
+.texto-home h2 {
+    margin-bottom: 20px;
+
+    font-size: 28px;
+}
+
+
+.texto-home p {
+    max-width: 620px;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: var(--texto-secundario);
+}
+
+
+/* =========================================================
+   FOTOS
+========================================================= */
+
+.fotos-home-dashboard {
+    width: 50%;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    isolation: isolate;
+}
+
+
+/* NÉVOA COLORIDA ATRÁS DAS FOTOS */
+
+.fotos-home-dashboard::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 520px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 25% 40%,
+            rgba(237, 233, 134, 0.42),
+            transparent 34%
+        ),
+
+        radial-gradient(
+            circle at 52% 25%,
+            rgba(235, 154, 178, 0.42),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 74% 60%,
+            rgba(147, 171, 217, 0.48),
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at 55% 75%,
+            rgba(239, 207, 227, 0.45),
+            transparent 40%
+        );
+
+    filter: blur(38px);
+
+    opacity: 0.85;
+
+    z-index: -1;
+}
+
+
+.fotos-home-dashboard img {
+    position: relative;
+
+    z-index: 1;
+
+    width: 180px;
+    height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 100px;
+
+    box-shadow:
+        0 20px 40px rgba(36, 51, 58, 0.08);
+}
+
+
+.fotos-home-dashboard img:nth-child(2) {
+    height: 500px;
+
+    transform: translateY(-15px);
+}
+
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
+.botao-home-dashboard {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-top: 28px;
+
+    padding: 15px 28px;
+
+    background-color: var(--rosa);
+
+    color: white;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-family: 'Inter', sans-serif;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 10px 25px rgba(226, 115, 150, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.botao-home-dashboard:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(226, 115, 150, 0.30);
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu-lateral {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    position: relative;
+}
+
+
+.menu-lateral a {
+    position: relative;
+
+    display: block;
+
+    padding: 14px 16px;
+
+    border-radius: 15px;
+
+    color: var(--texto);
+
+    text-decoration: none;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+
+    z-index: 2;
+}
+
+
+.menu-lateral a:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+
+.menu-lateral .ativo {
+    background-color: #F7FBFC;
+
+    font-weight: 700;
+
+    border-radius: 15px 0 0 15px;
+}
+
+
+.menu-lateral .ativo::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: -50px;
+
+    width: 55px;
+    height: 100%;
+
+    background-color: #F7FBFC;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   RESPONSIVO HOME
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .dashboard-cronograma {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sidebar-cronograma {
+        min-height: auto;
+
+        border-radius: 0;
+
+        padding: 20px;
+    }
+
+
+    .hero-home {
+        flex-direction: column;
+
+        justify-content: center;
+    }
+
+
+    .texto-home,
+    .fotos-home-dashboard {
+        width: 100%;
+    }
+
+
+    .texto-home {
+        text-align: center;
+    }
+
+
+    .texto-home p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .menu-lateral {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+    }
+
+
+    .menu-lateral .ativo::after {
+        display: none;
+    }
+}
+
+/* ==================================================
+   CORREÇÃO FINAL DA SIDEBAR
+   NÃO COLOCAR NADA ABAIXO DESTE BLOCO
+================================================== */
+
+
+/* SIDEBAR */
+
+.sidebar-cronograma {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    padding: 28px 20px;
+
+    background-color: #B3DEE2;
+
+    /* topo reto, curva somente embaixo */
+    border-radius: 0 28px 28px 0;
+
+    z-index: 1000;
+
+    overflow: hidden;
+}
+
+
+/* MENU */
+
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    width: 100%;
+}
+
+
+/* LINKS NORMAIS */
+
+.menu-lateral a {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    background: transparent;
+
+    color: #24333A;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    transform: none;
+
+    box-shadow: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* HOVER */
+
+.menu-lateral a:hover {
+    background-color: rgba(255, 255, 255, 0.40);
+
+    transform: translateX(2px);
+}
+
+
+/* ITEM DA SEÇÃO ATUAL */
+
+.menu-lateral a.ativo {
+    width: 100%;
+
+    background-color: #F7FBFC;
+
+    color: #24333A;
+
+    border-radius: 14px;
+
+    font-weight: 700;
+
+    transform: none;
+
+    box-shadow:
+        0 7px 18px rgba(36, 51, 58, 0.07);
+}
+
+
+/* MATA DEFINITIVAMENTE A EXTENSÃO ANTIGA */
+
+.menu-lateral a.ativo::after,
+.menu-lateral .ativo::after {
+    content: none !important;
+
+    display: none !important;
+
+    width: 0 !important;
+    height: 0 !important;
+
+    right: auto !important;
+
+    background: none !important;
+}
+
+
+/* CONTEÚDO NÃO ENTRA EMBAIXO DA SIDEBAR */
+
+.conteudo-home {
+    margin-left: 200px;
+
+    width: calc(100% - 200px);
 }

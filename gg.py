@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -209,7 +209,7 @@ def gerar_cronograma(prioridades):
 
 
 # ==================================================
-# ROTAS DAS PÁGINAS
+# ROTAS
 # ==================================================
 
 @app.route("/")
@@ -219,17 +219,17 @@ def inicio():
 
 @app.route("/cronograma")
 def cronograma():
-    return render_template("cronograma.html")
+    return redirect(url_for("inicio") + "#cronograma")
 
 
 @app.route("/entenda")
 def entenda():
-    return render_template("entenda.html")
+    return redirect(url_for("inicio") + "#entenda")
 
 
 @app.route("/emocional")
 def emocional():
-    return render_template("emocional.html")
+    return redirect(url_for("inicio") + "#emocional")
 
 
 # ==================================================
@@ -297,20 +297,14 @@ def analisar():
 
 
     return render_template(
-        "cronograma.html",
-
-        resultado=True,
-
-        pontuacoes=pontuacoes,
-
-        prioridades=prioridades,
-
-        cronograma=cronograma_gerado,
-
-        tipo_cabelo=tipo_cabelo_usuario,
-
-        espessura=espessura
-    )
+    "lista.html",
+    resultado=True,
+    pontuacoes=pontuacoes,
+    prioridades=prioridades,
+    cronograma=cronograma_gerado,
+    tipo_cabelo=tipo_cabelo_usuario,
+    espessura=espessura
+)
 
 
 # ==================================================
